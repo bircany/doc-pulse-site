@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Architect Portfolio Design System - Minimal & Professional
+All colors are HSL. Inspired by natural materials: cream, stone, marble.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Architectural color palette */
+    --background: 42 28% 95%; /* Warm cream #F5F3EF */
+    --foreground: 0 0% 10%; /* Deep charcoal #1A1A1A */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Pure white */
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 10%; /* Charcoal for main elements */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 15% 81%; /* Stone grey #D6D2C4 */
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 20% 88%; /* Lighter stone */
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 42 25% 92%; /* Subtle cream accent */
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 15% 85%; /* Soft stone border */
+    --input: 42 15% 85%;
+    --ring: 0 0% 10%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly rounded for elegance */
+
+    /* Architectural gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(42 28% 95%) 0%, hsl(42 15% 88%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(42 28% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(42 20% 96%) 100%);
+
+    /* Architectural shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.12);
+    --shadow-strong: 0 16px 40px -8px hsl(0 0% 0% / 0.16);
+
+    /* Typography scale */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Architectural spacing */
+    --section-padding: 6rem;
+    --content-max-width: 1200px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +119,65 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  /* Architectural typography */
+  .font-display {
+    font-family: var(--font-display);
+  }
+  
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Architectural utility classes */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-section {
+    background: var(--gradient-section);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  /* Smooth architectural animations */
+  .transition-elegant {
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+}
+
+@layer components {
+  /* Hero section architectural styling */
+  .hero-title {
+    @apply font-display text-5xl md:text-7xl font-semibold leading-tight tracking-tight;
+  }
+  
+  .hero-subtitle {
+    @apply font-body text-lg md:text-xl text-muted-foreground font-light leading-relaxed;
+  }
+  
+  /* Section headers */
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-medium text-foreground mb-4;
+  }
+  
+  .section-subtitle {
+    @apply font-body text-muted-foreground text-lg leading-relaxed max-w-2xl;
   }
 }
