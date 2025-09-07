@@ -1,5 +1,10 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import CVSection from "@/components/CVSection";
+import ServicesSection from "@/components/ServicesSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -10,55 +15,20 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* About Section - Coming soon */}
-      <section id="about" className="py-24 bg-gradient-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">Hakkımda</h2>
-          <p className="section-subtitle mx-auto">
-            Mimari tasarımda 8 yıllık deneyimim ile modern ve işlevsel yaşam alanları yaratıyorum.
-          </p>
-        </div>
-      </section>
+      {/* About Section */}
+      <AboutSection />
       
-      {/* Projects Section - Coming soon */}
-      <section id="projects" className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">Projeler</h2>
-          <p className="section-subtitle mx-auto">
-            Tamamladığım projeler ve tasarım portföyüm.
-          </p>
-        </div>
-      </section>
+      {/* Projects Section */}
+      <ProjectsSection />
       
-      {/* CV Section - Coming soon */}
-      <section id="cv" className="py-24 bg-gradient-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">CV & Deneyim</h2>
-          <p className="section-subtitle mx-auto">
-            Eğitim geçmişim, iş deneyimlerim ve sertifikalarım.
-          </p>
-        </div>
-      </section>
+      {/* CV Section */}
+      <CVSection />
       
-      {/* Services Section - Coming soon */}
-      <section id="services" className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">Hizmetler</h2>
-          <p className="section-subtitle mx-auto">
-            Sunduğum profesyonel mimarlık ve tasarım hizmetleri.
-          </p>
-        </div>
-      </section>
+      {/* Services Section */}
+      <ServicesSection />
       
-      {/* Contact Section - Coming soon */}
-      <section id="contact" className="py-24 bg-gradient-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">İletişim</h2>
-          <p className="section-subtitle mx-auto">
-            Projeleriniz için benimle iletişime geçin.
-          </p>
-        </div>
-      </section>
+      {/* Contact Section */}
+      <ContactSection />
       
       {/* Footer */}
       <footer className="py-12 bg-foreground text-background">
