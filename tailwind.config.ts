@@ -66,6 +66,11 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      boxShadow: {
+        'soft': '0 4px 20px -2px hsl(185 100% 32% / 0.1)',
+        'card': '0 8px 30px -5px hsl(185 100% 32% / 0.15)',
+        'glow': '0 0 40px hsl(185 100% 32% / 0.2)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -88,10 +93,32 @@ export default {
             height: "0",
           },
         },
+        "fade-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "slide-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "slide-in": "slide-in 0.8s ease-out forwards",
       },
     },
   },
