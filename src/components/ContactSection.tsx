@@ -15,18 +15,18 @@ const ContactSection = () => {
     projectType: "",
     message: ""
   });
-  
+
   const { toast } = useToast();
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simulate form submission
     toast({
       title: "Mesajınız Gönderildi!",
       description: "En kısa sürede size dönüş yapacağım.",
     });
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -36,7 +36,7 @@ const ContactSection = () => {
       message: ""
     });
   };
-  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -247,9 +247,9 @@ const ContactSection = () => {
                     <p className="font-body text-sm text-primary-foreground/80 mb-4">
                       WhatsApp üzerinden anında ulaşın
                     </p>
-                    <Button 
-                      variant="secondary" 
-                      size="sm" 
+                    <Button
+                      variant="secondary"
+                      size="sm"
                       className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90"
                     >
                       WhatsApp'tan Yaz
@@ -264,16 +264,18 @@ const ContactSection = () => {
         {/* Map placeholder */}
         <div className="mt-16">
           <Card className="bg-card shadow-soft border-border overflow-hidden">
-            <div className="aspect-video bg-muted flex items-center justify-center">
-              <div className="text-center space-y-2">
-                <MapPin className="w-12 h-12 text-muted-foreground mx-auto" />
-                <p className="font-body text-muted-foreground">
-                  Ofis Konumu - Levent, İstanbul
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  Detaylı konum bilgisi için iletişime geçin
-                </p>
-              </div>
+            <div className="aspect-video w-full h-[400px] bg-muted relative group">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12035.753386629!2d29.00654055531478!3d41.0770380879008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab63f62c0bda5%3A0x280436893608149e!2sLevent%2C%20Be%C5%9Fikta%C5%9F%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1709907106362!5m2!1str!2str"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+                title="Ofis Konumu"
+              ></iframe>
             </div>
           </Card>
         </div>

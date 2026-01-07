@@ -5,31 +5,33 @@ import ProjectsSection from "@/components/ProjectsSection";
 import CVSection from "@/components/CVSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
+import Chatbot from "@/components/Chatbot";
+
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <Navigation />
-      
+
       {/* Hero Section */}
       <HeroSection />
-      
+
       {/* About Section */}
       <AboutSection />
-      
+
       {/* Projects Section */}
       <ProjectsSection />
-      
+
       {/* CV Section */}
       <CVSection />
-      
+
       {/* Services Section */}
       <ServicesSection />
-      
+
       {/* Contact Section */}
       <ContactSection />
-      
+
       {/* Footer */}
       <footer className="py-12 bg-foreground text-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -39,6 +41,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Chatbot */}
+      <Chatbot />
     </div>
   );
 };
