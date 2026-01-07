@@ -2,121 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Medical Professional Design System
-All colors MUST be HSL. Aqua, cream, and white medical theme.
-*/
+/* Professional Medical Health Theme */
 
 @layer base {
   :root {
-    /* Core Colors - Medical Theme */
+    /* Base - Sterile White & Soft Gray */
     --background: 0 0% 100%;
-    --foreground: 200 100% 18%;
+    --foreground: 200 40% 20%;
+    /* Dark Slate Teal for text */
 
     /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 200 100% 18%;
+    --card-foreground: 200 40% 20%;
 
     /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 200 100% 18%;
+    --popover-foreground: 200 40% 20%;
 
-    /* Primary - Medical Aqua */
-    --primary: 185 100% 32%;
+    /* Primary - Medical Teal/Turquoise */
+    /* Represents healing, cleanliness, and trust */
+    --primary: 176 65% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 185 100% 28%;
-    --primary-light: 185 60% 85%;
+    --primary-hover: 176 65% 30%;
+    --primary-light: 176 65% 95%;
 
-    /* Secondary - Cream */
-    --secondary: 40 33% 97%;
-    --secondary-foreground: 200 100% 18%;
-    --secondary-hover: 40 33% 94%;
+    /* Secondary - Cool Light Blue (Scrubs Blue) */
+    --secondary: 195 50% 96%;
+    --secondary-foreground: 176 65% 35%;
+    --secondary-hover: 195 50% 92%;
 
-    /* Accent - Medical Blue */
-    --accent: 200 100% 18%;
+    /* Accent - Vitality Red (for important calls to action or health indicators) */
+    --accent: 350 80% 60%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 200 50% 90%;
+    --accent-light: 350 80% 96%;
 
     /* Muted */
-    --muted: 40 20% 96%;
-    --muted-foreground: 200 15% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 200 20% 50%;
 
     /* UI Elements */
-    --border: 185 30% 90%;
-    --input: 185 30% 95%;
-    --ring: 185 100% 32%;
+    --border: 200 20% 90%;
+    --input: 200 20% 95%;
+    --ring: 176 65% 35%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     /* Design System Variables */
-    --radius: 0.75rem;
-    
+    --radius: 0.5rem;
+    /* Clean, slightly rounded corners */
+
     /* Medical Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(185 100% 32%), hsl(185 80% 40%));
-    --gradient-hero: linear-gradient(135deg, hsl(185 100% 32%), hsl(40 33% 97%));
-    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 33% 97%));
-    
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -2px hsl(185 100% 32% / 0.1);
-    --shadow-card: 0 8px 30px -5px hsl(185 100% 32% / 0.15);
-    --shadow-glow: 0 0 40px hsl(185 100% 32% / 0.2);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --gradient-primary: linear-gradient(135deg, hsl(176 65% 35%), hsl(190 60% 40%));
+    --gradient-hero: linear-gradient(180deg, hsl(195 50% 98%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-soft: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(176 65% 98%) 100%);
+
+    /* Shadows - Clean and soft */
+    --shadow-soft: 0 2px 15px -3px rgba(45, 140, 130, 0.1);
+    --shadow-card: 0 4px 20px -5px rgba(45, 140, 130, 0.08);
+    --shadow-glow: 0 0 30px rgba(45, 140, 130, 0.15);
+
+    --transition-smooth: all 0.3s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 200 50% 10%;
+    --foreground: 200 20% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 200 50% 12%;
+    --card-foreground: 200 20% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 200 50% 12%;
+    --popover-foreground: 200 20% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 176 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 176 65% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 195 30% 20%;
+    --secondary-foreground: 200 20% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 200 30% 20%;
+    --muted-foreground: 200 20% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 350 70% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 200 30% 25%;
+    --input: 200 30% 25%;
+    --ring: 176 65% 45%;
   }
 }
 
@@ -126,40 +112,40 @@ All colors MUST be HSL. Aqua, cream, and white medical theme.
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-body;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-merriweather;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight text-primary;
   }
 }
 
 @layer components {
-  /* Medical Button Variants */
+
+  /* Medical Button Components */
   .btn-medical {
-    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground px-6 py-3 rounded-2xl font-medium transition-all duration-300 hover:shadow-glow hover:scale-105;
+    @apply bg-gradient-primary text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-300 hover:shadow-soft hover:-translate-y-0.5 active:translate-y-0;
   }
-  
-  .btn-medical-secondary {
-    @apply bg-secondary border border-primary/20 text-secondary-foreground px-6 py-3 rounded-2xl font-medium transition-all duration-300 hover:bg-secondary-hover hover:shadow-soft;
+
+  .btn-medical-outline {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-2.5 rounded-lg font-medium transition-all duration-300 hover:bg-secondary;
   }
-  
+
   /* Medical Cards */
   .card-medical {
-    @apply bg-card border border-border rounded-2xl p-6 shadow-card transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+    @apply bg-card border border-border/60 rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-card hover:border-primary/20;
   }
-  
-  /* Medical Section */
-  .section-medical {
-    @apply py-16 px-4 relative;
+
+  /* Utilities */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
-  
-  /* Medical Hero Gradient */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-  
-  /* Medical Soft Background */
+
   .bg-soft {
     background: var(--gradient-soft);
   }

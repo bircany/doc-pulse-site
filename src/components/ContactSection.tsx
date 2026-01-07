@@ -44,7 +44,7 @@ const ContactSection = () => {
             Benimle İletişime Geçin
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Sağlığınızla ilgili sorularınız için benimle iletişime geçebilir, 
+            Sağlığınızla ilgili sorularınız için benimle iletişime geçebilir,
             randevu talep edebilirsiniz.
           </p>
         </div>
@@ -83,16 +83,16 @@ const ContactSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground font-medium">Ad Soyad</Label>
-                  <Input 
-                    id="name" 
+                  <Input
+                    id="name"
                     placeholder="Adınız ve soyadınız"
                     className="rounded-xl border-border focus:border-primary transition-colors duration-300"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone" className="text-foreground font-medium">Telefon</Label>
-                  <Input 
-                    id="phone" 
+                  <Input
+                    id="phone"
                     placeholder="Telefon numaranız"
                     className="rounded-xl border-border focus:border-primary transition-colors duration-300"
                   />
@@ -101,9 +101,9 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-foreground font-medium">E-posta</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
+                <Input
+                  id="email"
+                  type="email"
                   placeholder="E-posta adresiniz"
                   className="rounded-xl border-border focus:border-primary transition-colors duration-300"
                 />
@@ -111,8 +111,8 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-foreground font-medium">Mesajınız</Label>
-                <Textarea 
-                  id="message" 
+                <Textarea
+                  id="message"
                   placeholder="Mesajınızı buraya yazın..."
                   rows={6}
                   className="rounded-xl border-border focus:border-primary transition-colors duration-300 resize-none"
@@ -127,12 +127,24 @@ const ContactSection = () => {
           </Card>
         </div>
 
-        {/* WhatsApp Float Button */}
-        <div className="fixed bottom-6 right-6 z-50">
-          <Button className="btn-medical rounded-full w-14 h-14 shadow-glow animate-bounce">
-            <MessageCircle className="w-6 h-6" />
-          </Button>
+        {/* Map Section */}
+        <div className="mt-12 animate-fade-up">
+          <Card className="card-medical overflow-hidden p-0 h-[400px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24085.39958742713!2d29.014281729341416!3d40.99966147668638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab867c4611599%3A0x709081e850619a0!2zS2FkxLFrw7Y5LCDEsHN0YW5idWw!5e0!3m2!1str!2str!4v1709907842341!5m2!1str!2str"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
+              title="Ofis Konumu"
+            ></iframe>
+          </Card>
         </div>
+
+
       </div>
     </section>
   );

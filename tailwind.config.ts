@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'merriweather': ['Merriweather', 'serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'heading': ['Plus Jakarta Sans', 'sans-serif'],
+        'body': ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,6 +65,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-section': 'var(--gradient-section)',
+        'gradient-soft': 'var(--gradient-soft)',
       },
       boxShadow: {
         'soft': '0 4px 20px -2px hsl(185 100% 32% / 0.1)',
