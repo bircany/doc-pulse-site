@@ -26,10 +26,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -62,6 +64,7 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -113,7 +116,7 @@ export default {
             opacity: "1",
             transform: "scale(1)"
           }
-        }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
