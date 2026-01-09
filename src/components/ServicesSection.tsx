@@ -1,9 +1,9 @@
-import { 
-  Building, 
-  Home, 
-  Palette, 
-  Box, 
-  Ruler, 
+import {
+  Building,
+  Home,
+  Palette,
+  Box,
+  Ruler,
   FileText,
   CheckCircle,
   ArrowRight,
@@ -13,6 +13,14 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const ServicesSection = () => {
   const services = [
@@ -22,7 +30,7 @@ const ServicesSection = () => {
       description: "Konut, villa ve ticari yapılar için kapsamlı mimari tasarım hizmetleri.",
       features: [
         "Konsept tasarım geliştirme",
-        "Teknik çizim ve detaylandırma", 
+        "Teknik çizim ve detaylandırma",
         "Yapı ruhsatı süreç yönetimi",
         "Şantiye takip ve denetim"
       ],
@@ -109,7 +117,7 @@ const ServicesSection = () => {
       description: "İhtiyaçlarınızı dinliyor, projenizin gereksinimlerini belirliyoruz."
     },
     {
-      step: "02", 
+      step: "02",
       title: "Konsept Geliştirme",
       description: "Yaratıcı fikirler geliştiriyor, ilk tasarım önerilerini sunuyoruz."
     },
@@ -132,7 +140,7 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">Hizmetlerim</h2>
           <p className="section-subtitle mx-auto">
-            Mimari tasarımdan uygulamaya kadar geniş bir yelpazede profesyonel hizmetler sunuyorum. 
+            Mimari tasarımdan uygulamaya kadar geniş bir yelpazede profesyonel hizmetler sunuyorum.
             Her proje için kişiselleştirilmiş çözümler üretiyorum.
           </p>
         </div>
@@ -140,11 +148,10 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className={`bg-card shadow-soft hover:shadow-strong transition-elegant border-border relative overflow-hidden group ${
-                service.popular ? 'ring-2 ring-primary' : ''
-              }`}
+            <Card
+              key={index}
+              className={`bg-card shadow-soft hover:shadow-strong transition-elegant border-border relative overflow-hidden group ${service.popular ? 'ring-2 ring-primary' : ''
+                }`}
             >
               {service.popular && (
                 <div className="absolute top-4 right-4">
@@ -153,7 +160,7 @@ const ServicesSection = () => {
                   </Badge>
                 </div>
               )}
-              
+
               <CardHeader className="pb-4">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <service.icon className="w-6 h-6" />
@@ -202,13 +209,71 @@ const ServicesSection = () => {
                 </div>
 
                 {/* CTA */}
-                <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
-                >
-                  Detaylı Bilgi Al
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-colors"
+                    >
+                      Detaylı Bilgi Al
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                          <service.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <DialogTitle className="font-display text-xl">{service.title}</DialogTitle>
+                      </div>
+                      <DialogDescription>
+                        {service.description}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+
+                      <div className="space-y-4">
+                        <h4 className="font-semibold text-sm">Hizmet Kapsamı</h4>
+                        <div className="grid gap-2">
+                          {service.features.map((feature, idx) => (
+                            <div key={idx} className="flex items-start space-x-3 bg-muted/50 p-3 rounded-lg">
+                              <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                              <span className="text-sm text-foreground/80">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4 border-t pt-4">
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">Ortalama Süre</p>
+                          <p className="font-medium text-sm flex items-center">
+                            <Clock className="w-3 h-3 mr-1.5" />
+                            {service.duration}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground mb-1">Tahmini Fiyat</p>
+                          <p className="font-medium text-sm flex items-center">
+                            <DollarSign className="w-3 h-3 mr-1.5" />
+                            {service.price}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="bg-primary/5 p-4 rounded-lg flex items-center gap-4">
+                        <div className="flex-1">
+                          <p className="text-sm font-medium">Bu hizmet için teklif mi almak istiyorsunuz?</p>
+                          <p className="text-xs text-muted-foreground">Ücretsiz ön görüşme için hemen randevu oluşturun.</p>
+                        </div>
+                        <Button size="sm" onClick={() => window.location.href = '#contact'}>
+                          İletişime Geç
+                        </Button>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           ))}
@@ -232,12 +297,12 @@ const ServicesSection = () => {
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-border -translate-x-1/2 z-0"></div>
                 )}
-                
+
                 {/* Step circle */}
                 <div className="relative z-10 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-display font-semibold text-lg mx-auto mb-4">
                   {step.step}
                 </div>
-                
+
                 {/* Content */}
                 <h4 className="font-display text-lg font-semibold text-foreground mb-2">
                   {step.title}
@@ -256,7 +321,7 @@ const ServicesSection = () => {
             Projenizi Konuşalım
           </h3>
           <p className="font-body text-muted-foreground mb-8 max-w-xl mx-auto">
-            Hayalinizdeki projeyi gerçeğe dönüştürmek için bir araya gelelim. 
+            Hayalinizdeki projeyi gerçeğe dönüştürmek için bir araya gelelim.
             Ücretsiz danışmanlık için iletişime geçin.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -264,7 +329,7 @@ const ServicesSection = () => {
               Ücretsiz Danışmanlık
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" onClick={() => window.open('https://wa.me/905321234567', '_blank')}>
               WhatsApp ile İletişim
             </Button>
           </div>

@@ -1,17 +1,25 @@
 import { useState } from "react";
-import { ExternalLink, Calendar, MapPin, Users } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Users, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import projectVilla from "@/assets/project-villa.jpg";
 import projectOffice from "@/assets/project-office.jpg";
 import projectApartment from "@/assets/project-apartment.jpg";
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
-  
+
   const categories = ["Tümü", "Konut", "Ticari", "İç Mekan"];
-  
+
   const projects = [
     {
       id: 1,
@@ -42,7 +50,7 @@ const ProjectsSection = () => {
     {
       id: 3,
       title: "Minimalist Daire Projesi",
-      category: "İç Mekan", 
+      category: "İç Mekan",
       location: "Nişantaşı, İstanbul",
       year: "2023",
       client: "Genç Çift",
@@ -54,8 +62,8 @@ const ProjectsSection = () => {
     }
   ];
 
-  const filteredProjects = selectedCategory === "Tümü" 
-    ? projects 
+  const filteredProjects = selectedCategory === "Tümü"
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
@@ -89,13 +97,13 @@ const ProjectsSection = () => {
             <Card key={project.id} className="group bg-card shadow-soft hover:shadow-strong transition-elegant border-border overflow-hidden">
               {/* Project Image */}
               <div className="relative overflow-hidden">
-                <img 
+                <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                
+
                 {/* Overlay Info */}
                 <div className="absolute top-4 left-4">
                   <Badge variant="secondary" className="bg-background/80 text-foreground">
@@ -141,22 +149,78 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* CTA */}
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Detayları Gör
-                </Button>
+                {/* CTA */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Detayları Gör
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[700px] max-h-[80vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="font-display text-2xl">{project.title}</DialogTitle>
+                      <DialogDescription>
+                        {project.category} - {project.location}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6 mt-4">
+                      {/* Image */}
+                      <div className="rounded-lg overflow-hidden h-64 w-full">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Details Grid */}
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-1">
+                          <p className="font-semibold text-sm">Müşteri</p>
+                          <p className="text-sm text-muted-foreground">{project.client}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="font-semibold text-sm">Yıl</p>
+                          <p className="text-sm text-muted-foreground">{project.year}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="font-semibold text-sm">Alan</p>
+                          <p className="text-sm text-muted-foreground">{project.area}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="font-semibold text-sm">Bütçe</p>
+                          <p className="text-sm text-muted-foreground">{project.budget}</p>
+                        </div>
+                      </div>
+
+                      {/* Full Description */}
+                      <div className="space-y-2">
+                        <p className="font-semibold text-sm">Proje Hakkında</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {project.description} Bu proje, modern mimari pratiklerin en güncel örneklerinden biri olarak tasarlanmıştır.
+                          Kullanıcı ihtiyaçları ve çevresel faktörler gözetilerek, sürdürülebilir ve estetik bir yaşam alanı oluşturulması hedeflenmiştir.
+                        </p>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {project.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* View More */}
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
-            Tüm Projeleri Gör
-            <ExternalLink className="w-4 h-4 ml-2" />
-          </Button>
-        </div>
+
       </div>
     </section>
   );

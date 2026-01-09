@@ -39,6 +39,9 @@ const Index = () => {
           <p className="font-body text-sm text-background/70">
             © 2024 Mehmet Yılmaz. Tüm hakları saklıdır.
           </p>
+          <p className="font-body text-xs text-background/50 mt-2">
+            Present by SoftArtStudio
+          </p>
         </div>
       </footer>
 

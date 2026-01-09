@@ -8,13 +8,13 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen bg-gradient-hero relative overflow-hidden pt-16">
       {/* Background architectural elements */}
       <div className="absolute inset-0 opacity-10">
-        <img 
-          src={heroImage} 
-          alt="Mimari arka plan" 
+        <img
+          src={heroImage}
+          alt="Mimari arka plan"
           className="w-full h-full object-cover"
         />
       </div>
-      
+
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -25,14 +25,14 @@ const HeroSection = () => {
                 <MapPin className="w-4 h-4" />
                 <span className="font-body text-sm">İstanbul, Türkiye</span>
               </div>
-              
+
               <h1 className="hero-title text-foreground">
                 Mimari Tasarımda
                 <span className="block text-secondary">Yenilikçi Yaklaşım</span>
               </h1>
-              
+
               <p className="hero-subtitle max-w-lg">
-                Modern mimari çözümler ile yaşam alanlarınızı tasarlıyor, 
+                Modern mimari çözümler ile yaşam alanlarınızı tasarlıyor,
                 işlevsellik ve estetiği mükemmel şekilde harmanlıyorum.
               </p>
             </div>
@@ -40,7 +40,7 @@ const HeroSection = () => {
             {/* Expertise tags */}
             <div className="flex flex-wrap gap-3">
               {["İç Mekan Tasarımı", "Yapı Tasarımı", "3D Görselleştirme"].map((tag) => (
-                <span 
+                <span
                   key={tag}
                   className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-body font-medium"
                 >
@@ -51,15 +51,12 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="shadow-medium">
-                <Eye className="w-5 h-5 mr-2" />
-                Portfolyo Gör
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg" className="shadow-soft">
-                <Download className="w-5 h-5 mr-2" />
-                CV İndir
-              </Button>
+              <a href="/Mehmet-Yilmaz-CV.pdf" download="Mehmet-Yilmaz-CV.pdf">
+                <Button variant="outline" size="lg" className="shadow-soft">
+                  <Download className="w-5 h-5 mr-2" />
+                  CV İndir
+                </Button>
+              </a>
             </div>
 
             {/* Stats */}
@@ -84,13 +81,13 @@ const HeroSection = () => {
             <div className="relative">
               <div className="w-full max-w-lg mx-auto">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-strong bg-gradient-card">
-                  <img 
+                  <img
                     src={portraitImage}
                     alt="Mimar Portresi"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Floating info card */}
                 <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-medium border border-border">
                   <div className="text-left">
@@ -115,7 +112,7 @@ const HeroSection = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-1 h-16 bg-gradient-to-b from-transparent via-muted to-transparent rounded-full"></div>
       </div>
-    </section>
+    </section >
   );
 };
 

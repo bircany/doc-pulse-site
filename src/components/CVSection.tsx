@@ -2,7 +2,7 @@ import { Download, GraduationCap, Briefcase, Award, Calendar } from "lucide-reac
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -120,10 +120,12 @@ const CVSection = () => {
           <p className="section-subtitle mx-auto">
             Eğitim geçmişim, iş deneyimlerim ve profesyonel gelişim yolculuğum hakkında detaylı bilgiler.
           </p>
-          <Button size="lg" className="mt-6 shadow-medium">
-            <Download className="w-5 h-5 mr-2" />
-            CV'mi PDF Olarak İndir
-          </Button>
+          <a href="/Mehmet-Yilmaz-CV.pdf" download="Mehmet-Yilmaz-CV.pdf">
+            <Button size="lg" className="mt-6 shadow-medium">
+              <Download className="w-5 h-5 mr-2" />
+              CV'mi PDF Olarak İndir
+            </Button>
+          </a>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">

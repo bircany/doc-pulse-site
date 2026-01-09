@@ -19,7 +19,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
+            <img src="/favicon.png" alt="Logo" className="w-8 h-8" />
             <span className="font-display text-2xl font-semibold text-foreground">
               Mimar
             </span>
@@ -36,16 +37,7 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <div className="flex items-center space-x-3 ml-6">
-              <Button variant="outline" size="sm">
-                <Eye className="w-4 h-4 mr-2" />
-                Portfolyo
-              </Button>
-              <Button size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                CV İndir
-              </Button>
-            </div>
+            {/* Desktop Navigation Link Container */}
           </div>
 
           {/* Mobile menu button */}
@@ -74,16 +66,6 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="pt-4 space-y-2">
-                <Button variant="outline" size="sm" className="w-full">
-                  <Eye className="w-4 h-4 mr-2" />
-                  Portfolyo
-                </Button>
-                <Button size="sm" className="w-full">
-                  <Download className="w-4 h-4 mr-2" />
-                  CV İndir
-                </Button>
-              </div>
             </div>
           </div>
         )}

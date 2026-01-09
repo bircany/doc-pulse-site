@@ -20,14 +20,22 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = `Proje Danışmanlığı Talebi: ${formData.projectType}`;
+    const body = `Ad Soyad: ${formData.name}
+Telefon: ${formData.phone}
+Email: ${formData.email}
+Proje Türü: ${formData.projectType}
 
-    // Simulate form submission
+Mesaj:
+${formData.message}`;
+
+    window.location.href = `mailto:mehmet@yilmazmimar.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     toast({
-      title: "Mesajınız Gönderildi!",
-      description: "En kısa sürede size dönüş yapacağım.",
+      title: "E-posta İstemcisi Açılıyor",
+      description: "Mesajınızı göndermek için e-posta uygulamanız açılacak.",
     });
 
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -251,6 +259,7 @@ const ContactSection = () => {
                       variant="secondary"
                       size="sm"
                       className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                      onClick={() => window.open('https://wa.me/905321234567', '_blank')}
                     >
                       WhatsApp'tan Yaz
                     </Button>
