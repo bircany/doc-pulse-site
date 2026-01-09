@@ -99,7 +99,7 @@ const Chatbot = () => {
                     <div className="bg-gradient-primary p-4 flex justify-between items-center text-white">
                         <div className="flex items-center gap-3">
                             <div className="relative">
-                                <div className="w-2.5 h-2.5 bg-accent rounded-full absolute bottom-0 right-0 border-2 border-primary shadow-sm z-10"></div>
+                                <div className="w-2.5 h-2.5 bg-[#22c55e] rounded-full absolute bottom-0 right-0 border-2 border-primary shadow-sm z-10"></div>
                                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
                                     {/* Using UserRound as a more "medical staff" looking icon, or keeping MessageSquare */}
                                     <UserRound className="w-6 h-6 text-white" />
@@ -129,8 +129,8 @@ const Chatbot = () => {
                             >
                                 <div
                                     className={`max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed shadow-sm ${msg.isUser
-                                            ? 'bg-primary text-white rounded-br-none'
-                                            : 'bg-white text-foreground border border-border/50 rounded-bl-none'
+                                        ? 'bg-primary text-white rounded-br-none'
+                                        : 'bg-white text-foreground border border-border/50 rounded-bl-none'
                                         }`}
                                 >
                                     {msg.text}
@@ -223,15 +223,15 @@ const Chatbot = () => {
             <div className="relative group">
                 {/* Pulse Effect */}
                 {!isOpen && (
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-20 animate-ping duration-2000"></span>
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-secondary opacity-20 animate-ping duration-2000"></span>
                 )}
 
                 <Button
                     onClick={() => setIsOpen(!isOpen)}
                     size="lg"
                     className={`rounded-full w-16 h-16 shadow-glow relative z-10 transition-all duration-500 ${isOpen
-                            ? 'bg-secondary text-primary hover:bg-white rotate-90 border-2 border-primary/10'
-                            : 'bg-gradient-primary text-white hover:scale-110'
+                        ? 'bg-secondary text-primary hover:bg-white rotate-90 border-2 border-primary/10'
+                        : 'bg-gradient-primary text-white hover:scale-110'
                         }`}
                 >
                     {isOpen ? <X className="w-7 h-7" /> : <MessageSquare className="w-7 h-7" />}
@@ -239,8 +239,8 @@ const Chatbot = () => {
                     {/* Status Dot */}
                     {!isOpen && (
                         <span className="absolute top-1 right-1 flex h-4 w-4">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-4 w-4 bg-accent border-2 border-white"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#22c55e] border-2 border-white"></span>
                         </span>
                     )}
                 </Button>

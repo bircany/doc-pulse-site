@@ -31,10 +31,10 @@
     --secondary-foreground: 176 65% 35%;
     --secondary-hover: 195 50% 92%;
 
-    /* Accent - Vitality Red (for important calls to action or health indicators) */
-    --accent: 350 80% 60%;
+    /* Accent - Calm Blue (Replacing Vitality Red) */
+    --accent: 210 70% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 350 80% 96%;
+    --accent-light: 210 70% 96%;
 
     /* Muted */
     --muted: 210 20% 96%;
@@ -94,7 +94,7 @@
     --muted: 200 30% 20%;
     --muted-foreground: 200 20% 70%;
 
-    --accent: 350 70% 60%;
+    --accent: 210 70% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;

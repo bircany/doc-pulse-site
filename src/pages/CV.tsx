@@ -81,7 +81,7 @@ const CV = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -95,10 +95,12 @@ const CV = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               15 yıllık tıp ve kardiyoloji deneyimim, eğitimim ve profesyonel gelişimim
             </p>
-            <Button className="btn-medical">
-              <Download className="w-5 h-5 mr-2" />
-              PDF Olarak İndir
-            </Button>
+            <a href="/Dr-Ayse-Demir-CV.pdf" download="Dr-Ayse-Demir-CV.pdf">
+              <Button className="btn-medical">
+                <Download className="w-5 h-5 mr-2" />
+                PDF Olarak İndir
+              </Button>
+            </a>
           </div>
 
           {/* Education Section */}

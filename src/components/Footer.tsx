@@ -81,7 +81,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index} className="text-primary-foreground/80 flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
                   {service}
                 </li>
               ))}
@@ -93,18 +93,18 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">İletişim</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/80">+90 212 555 0123</p>
                   <p className="text-sm text-primary-foreground/60">Pazartesi - Cuma: 09:00-18:00</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                 <p className="text-primary-foreground/80">dr.aysedemir@email.com</p>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-white mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/80">Acıbadem Hastanesi</p>
                   <p className="text-sm text-primary-foreground/60">Kardiyoloji Bölümü, Kadıköy</p>
@@ -118,7 +118,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 Dr. Ayşe Demir. Tüm hakları saklıdır.
+              © 2024 Dr. Ayşe Demir. Tüm hakları saklıdır. <span className="opacity-70">| SoftArtStudio</span>
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors duration-300">

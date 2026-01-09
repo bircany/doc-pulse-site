@@ -37,8 +37,7 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `font-medium transition-all duration-300 hover:text-primary relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
-                    isActive ? 'text-primary after:scale-x-100' : 'text-foreground'
+                  `font-medium transition-all duration-300 hover:text-primary relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isActive ? 'text-primary after:scale-x-100' : 'text-foreground'
                   }`
                 }
               >
@@ -49,14 +48,12 @@ const Navigation = () => {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="border-primary/20 hover:border-primary">
-              <Download className="w-4 h-4 mr-2" />
-              CV İndir
-            </Button>
-            <Button className="btn-medical">
-              <Calendar className="w-4 h-4 mr-2" />
-              Randevu Al
-            </Button>
+            <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer">
+              <Button className="btn-medical">
+                <Calendar className="w-4 h-4 mr-2" />
+                Randevu Al
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -80,10 +77,9 @@ const Navigation = () => {
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `font-medium py-2 px-4 rounded-lg transition-all duration-300 ${
-                      isActive
-                        ? 'text-primary bg-primary-light'
-                        : 'text-foreground hover:text-primary hover:bg-muted'
+                    `font-medium py-2 px-4 rounded-lg transition-all duration-300 ${isActive
+                      ? 'text-primary bg-primary-light'
+                      : 'text-foreground hover:text-primary hover:bg-muted'
                     }`
                   }
                 >
@@ -91,14 +87,12 @@ const Navigation = () => {
                 </NavLink>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="outline" size="sm" className="justify-start">
-                  <Download className="w-4 h-4 mr-2" />
-                  CV İndir
-                </Button>
-                <Button className="btn-medical justify-start">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Randevu Al
-                </Button>
+                <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button className="btn-medical justify-start w-full">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Randevu Al
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

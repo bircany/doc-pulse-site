@@ -34,7 +34,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="section-medical bg-soft">
+    <section className="section-medical bg-soft py-24 lg:py-32">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-4 py-2 bg-primary-light text-primary font-medium rounded-full mb-4">
@@ -61,9 +61,29 @@ const ContactSection = () => {
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-foreground mb-2">{info.title}</h3>
                     <p className="text-muted-foreground whitespace-pre-line mb-3">{info.content}</p>
-                    <Button variant="outline" size="sm" className="btn-medical-secondary">
-                      {info.action}
-                    </Button>
+                    {info.action === 'Randevu Al' ? (
+                      <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm" className="btn-medical-secondary">
+                          {info.action}
+                        </Button>
+                      </a>
+                    ) : info.action === 'Ara' ? (
+                      <a href="tel:+902125550123">
+                        <Button variant="outline" size="sm" className="btn-medical-secondary">
+                          {info.action}
+                        </Button>
+                      </a>
+                    ) : info.action === 'Mail Gönder' ? (
+                      <a href="mailto:dr.aysedemir@email.com">
+                        <Button variant="outline" size="sm" className="btn-medical-secondary">
+                          {info.action}
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button variant="outline" size="sm" className="btn-medical-secondary">
+                        {info.action}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>

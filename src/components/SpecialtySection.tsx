@@ -42,7 +42,7 @@ const SpecialtySection = () => {
   ];
 
   return (
-    <section className="section-medical bg-soft">
+    <section className="section-medical bg-soft py-24 lg:py-32">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <span className="inline-block px-4 py-2 bg-primary-light text-primary font-medium rounded-full mb-4">
@@ -52,15 +52,15 @@ const SpecialtySection = () => {
             Kapsamlı Kardiyoloji Hizmetleri
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Modern tıp teknolojisi ve deneyimli yaklaşımla kalp sağlığınız için 
+            Modern tıp teknolojisi ve deneyimli yaklaşımla kalp sağlığınız için
             en iyi hizmeti sunmaktayım.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {specialties.map((specialty, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="card-medical group hover:border-primary/30 transition-all duration-500"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
